@@ -5,7 +5,8 @@ fun main(args: Array<String>) {
 
     days.forEach {
         val clazz = Class.forName("dev.schlaubi.aoc.days.Day$it").kotlin
-        val instance = clazz.objectInstance as Day<*>
+        val instance = clazz.objectInstance as
+                Day<*>
 
         instance.run()
     }
