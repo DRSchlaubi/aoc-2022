@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.7.21"
+    application
 }
 
 repositories {
@@ -16,4 +17,8 @@ tasks {
     test {
         useJUnitPlatform()
     }
+}
+
+application {
+  mainClass.set("dev.schlaubi.aoc.LauncherKt")
 }
