@@ -2,9 +2,13 @@ import dev.schlaubi.aoc.Day
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.TestInstance
 import kotlin.test.Test
+import kotlin.test.assertEquals
+
+// This way inheritors don't need to specify T
+typealias DayTest = DayTestImpl<*>
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-abstract class DayTest<T>(val day: Day<T>) {
+abstract class DayTestImpl<T>(val day: Day<T>) {
     abstract val test1Result: Any
     abstract val test2Result: Any
 
@@ -17,11 +21,11 @@ abstract class DayTest<T>(val day: Day<T>) {
 
     @Test
     fun `test task 1`() {
-        day.task1(prepared!!)
+        assertEquals(test1Result, day.task1(prepared!!))
     }
 
     @Test
     fun `test task 2`() {
-        day.task2(prepared!!)
+        assertEquals(test2Result, day.task2(prepared!!))
     }
 }
