@@ -25,3 +25,8 @@ inline fun <T> List<T>.splitWhen(crossinline predicate: (T) -> Boolean): List<Li
                 subList(startIndex, endIndex) // Adding the relevant sub-list
             }.toList()
 }
+
+/**
+ * Skips the next [n] elements of the iterator.
+ */
+fun Iterator<*>.skip(n: Int = 1) = repeat(n) { if (hasNext()) next() }

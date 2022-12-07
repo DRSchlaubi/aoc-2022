@@ -1,6 +1,7 @@
 package dev.schlaubi.aoc.days
 
 import dev.schlaubi.aoc.Day
+import dev.schlaubi.aoc.skip
 import kotlin.io.path.readLines
 
 data class Instruction(val amount: Int, val from: Int, val to: Int) {
@@ -93,7 +94,5 @@ private fun MutableList<MutableList<Char>>.applyInstruction(instruction: Instruc
 }
 
 private fun List<List<Char>>.asMutable() = map(List<Char>::toMutableList).toMutableList()
-
-private fun Iterator<*>.skip(n: Int = 1) = repeat(n) { if (hasNext()) next() }
 
 private fun <T> MutableList<T>.removeFirstN(n: Int = 1) = buildList { repeat(n) { add(this@removeFirstN.removeFirst()) } }

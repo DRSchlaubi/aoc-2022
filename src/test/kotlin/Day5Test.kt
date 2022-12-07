@@ -1,3 +1,4 @@
+
 import dev.schlaubi.aoc.days.Day5
 
 class Day5Test : DayTest(Day5) {
